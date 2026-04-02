@@ -1,5 +1,7 @@
-FROM python:3.10-slim-buster
+# Debian Buster-ന് പകരം പുതിയ Bullseye ഉപയോഗിക്കുന്നു (ഇത് എറർ ഒഴിവാക്കും)
+FROM python:3.10-slim-bullseye
 
+# സിസ്റ്റം ഡിപെൻഡൻസികൾ
 RUN apt-get update && apt-get install -y \
     git \
     gcc \
