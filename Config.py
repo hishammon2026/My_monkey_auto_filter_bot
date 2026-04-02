@@ -14,9 +14,19 @@ BOT_TOKEN = environ['BOT_TOKEN']
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
 
-BROADCAST_CHANNEL = int(os.environ.get("BROADCAST_CHANNEL", ""))
+BROADCAST_CHANNEL = int(os.environ.get("BROADCAST_CHANNEL", "0"))
 ADMIN_ID = set(int(x) for x in os.environ.get("ADMIN_ID", "").split())
-DB_URL = os.environ.get("DATABASE_1", "")
+
+# --- ഡാറ്റാബേസ് സെക്ഷൻ (ഇവിടെയാണ് മാറ്റം വരുത്തിയത്) ---
+# നിന്റെ മെയിൻ ലിങ്ക് താഴെ നേരിട്ട് നൽകിയിരിക്കുന്നു
+MONGO_URL = "mongodb+srv://hishammon:hishammon@cluster0.2g7bqyf.mongodb.net/?appName=Cluster0"
+
+DB_URL = environ.get("DATABASE_1", MONGO_URL) # ബ്രോഡ്കാസ്റ്റിന്
+DATABASE_URI = environ.get('DATABASE_2', MONGO_URL) # മെയിൻ ഫിൽറ്ററിന്
+DATABASE_NAME = environ.get('BOT_NAME', 'hishammon')
+COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
+# ---------------------------------------------------
+
 BROADCAST_AS_COPY = bool(os.environ.get("BROADCAST", True))
 
 # Admins, Channels & Users
@@ -27,27 +37,17 @@ AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('FORCES_SUB')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else auth_channel
 AUTH_GROUPS = [int(admin) for admin in environ.get("AUTH_GROUPS", "").split()]
+
 TUTORIAL = "https://t.me/bothelpersosupport/28"
-# MongoDB information
-DATABASE_URI = environ['DATABASE_2']
-DATABASE_NAME = environ['BOT_NAME']
-COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Messages
 default_start_msg = """
 **Hi, I'm Auto Filter V3**
-
-Here you can search files in Inline mode as well as PM, Use the below buttons to search files or send me the name of file to search.
+Send me the name of movie to search.
 """
 START_MSG = environ.get('START_MSG', default_start_msg)
-
 FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "")
-OMDB_API_KEY = environ.get("OMDB_API_KEY", "http://www.omdbapi.com/?i=tt3896198&apikey=4f08a979")
-if FILE_CAPTION.strip() == "":
-    CUSTOM_FILE_CAPTION=None
-else:
-    CUSTOM_FILE_CAPTION=FILE_CAPTION
-if OMDB_API_KEY.strip() == "":
-    API_KEY=None
-else:
-    API_KEY=OMDB_API_KEY
+OMDB_API_KEY = environ.get("OMDB_API_KEY", "4f08a979")
+
+API_KEY = OMDB_API_KEY.strip() if OMDB_API_KEY.strip() else None
+CUSTOM_FILE_CAPTION = FILE_CAPTION.strip() if FILE_CAPTION.strip() else None
