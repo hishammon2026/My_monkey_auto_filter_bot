@@ -23,7 +23,7 @@ MONGO_URL = "mongodb+srv://hishammon:hishammon@cluster0.2g7bqyf.mongodb.net/?app
 
 DB_URL = environ.get("DATABASE_1", MONGO_URL) # ബ്രോഡ്കാസ്റ്റിന്
 DATABASE_URI = environ.get('DATABASE_2', MONGO_URL) # മെയിൻ ഫിൽറ്ററിന്
-DATABASE_NAME = environ.get('BOT_NAME', 'hishammon')
+DATABASE_NAME = environ.get('BOT_NAME', 'Cluster0')
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 # ---------------------------------------------------
 
