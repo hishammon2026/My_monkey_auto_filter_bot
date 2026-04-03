@@ -1,7 +1,4 @@
 
-
-![GitHub Repo stars](https://img.shields.io/github/stars/DalinMathew/AutoFilterBotV3?style=social)
-<img src="https://img.shields.io/github/forks/DalinMathew/AutoFilterBotV3?style=social"></img>
 ## How To Deploy Video
 <a href="https://youtu.be/5hnYOKBzyi8"><img src="https://img.shields.io/badge/How%20To%20Deploy-blue.svg?logo=Youtube"></a> <img src="https://img.shields.io/youtube/views/5hnYOKBzyi8?style=social">
 ## Subscribe YouTube Channel
@@ -19,8 +16,9 @@
 * Ability to restrict groups(AUTH_GROUPS)
 
 #### Deploy To Heroku
-
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/DalinMathew/AutoFilterBotV3)
+### Deploy To render
+### Deploy To Koyeb
+### Deploy To Vps 
 
 #### Hard Way
 ```bash
@@ -74,9 +72,11 @@ Once a poster is fetched from OMDB , poster is saved to DB to reduce duplicate r
 * [Pyrogram](https://github.com/pyrogram/pyrogram)
 * [Original Repo](https://github.com/Mahesh0253/Media-Search-bot)
 * [subinps](https://github.com/subinps/Media-Search-bot)
-* [Editing Muhammed Rk](https://github.com/PR0FESS0R-99/LuciferMoringstar_Robot)
-* [Mo Tech YT](https://t.me/Mo_Tech_Group)
-* [Lucifer Morningstar](@Lucifer_Devil_AD)
+* [Editing Muhammed Rk](https://t.me//hishammon)
+
+
 
 ## License
 Code released under [The GNU General Public License](LICENSE).
+
+### DEVELOPER = HISHAM
